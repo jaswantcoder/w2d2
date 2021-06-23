@@ -1,0 +1,99 @@
+customer:
+
+primary_key int customer_id(16);
+string name(20);
+string email(20);
+int phoneNo(10);
+string address(40);
+
+order:
+
+primary_key int order id(10);
+foreign_key int customer_id(10);
+foreign_key int product_id;
+foreign_key int coupon_code;
+date order_timestamp;
+string type_of_order;  // cod or online payment order
+string net_payable_amount;
+
+
+Product:
+primary_key product_id;
+string product_category;
+
+
+ratings_n_feedback:
+
+foreign_key customer_id;
+foreign_key product_id;
+int rating;
+string feedback_comment;
+
+
+
+Coupon:
+primary_key int coupon_code(10);
+date coupon_expiry_date;
+int discount(8);
+
+Smartphones:
+foreign_key int product_id;
+string imageurl;
+string brand;
+int cost;
+
+
+
+Wifi devices:
+foreign_key int product_id;
+string brand;
+string model;
+string wifi_range_capacity;
+int cost;
+
+
+Bands:
+foreign_key int product_id;
+string brand;
+string model;
+int bandwidth;
+int cost;
+
+
+Power banks:
+foreign_key int product_id;
+string brand;
+string model;
+int durability;
+int power;
+int cost;
+
+Headphones:
+foreign_key int product_id;
+string brand;
+string audio_capability;
+string model;
+int cost;
+
+VR Players:
+foreign_key int product_id;
+string brand;
+string player_capacity;
+string model;
+int cost;
+
+
+Charging accessories:
+foreign_key int product_id;
+string brand;
+int chargind_capacity;
+string model;
+int cost;
+
+Bluetooth speakers:
+foreign_key int product_id;
+string brand;
+string blutooth_range_capacity;
+string model;
+int cost;
+
